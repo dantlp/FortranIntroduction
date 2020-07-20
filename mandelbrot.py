@@ -2,7 +2,7 @@ import numpy as np
 import time
 
 ITERATIONS = 100
-DENSITY = 1000
+DENSITY = 2000
 x_min, x_max = -2.68, 1.32
 y_min, y_max = -1.5, 1.5
 
@@ -14,6 +14,7 @@ fractal = np.zeros(z.shape, dtype=np.uint8) + 255
 
 tic = time.perf_counter()
 
+print("Mandelbrot with Python/Numpy")
 print(f'ITERATIONS = {ITERATIONS}')
 print(f'DENSITY = {DENSITY}')
 
@@ -25,7 +26,7 @@ for n in range(ITERATIONS):
 
 toc = time.perf_counter()
 
-print(f"CPU time {toc - tic:0.4f} seconds")
+print(f"CPU time {toc - tic:0.3f} seconds")
 
 print("Saving...")
 np.savetxt("fractal.dat", np.log(fractal))
